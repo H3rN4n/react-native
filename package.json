@@ -15,6 +15,7 @@
     "react-native-code-push": "^1.14.6-beta",
     "react-native-file-download": "0.0.10",
     "react-native-fs": "^2.0.1-rc.2",
+    "react-native-navbar": "^1.5.4",
     "react-native-network-info": "^0.2.0"
   }
 }

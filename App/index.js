@@ -4,7 +4,7 @@ import Wifi from './Wifi';
 import List from './List';
 import ListSd from './ListSd';
 import Messages from './Messages';
-import ReactNativeAutoUpdater from 'react-native-auto-updater';
+//import ReactNativeAutoUpdater from 'react-native-auto-updater';
 
 
 export default class App extends Component {
@@ -29,6 +29,7 @@ export default class App extends Component {
 
   render() {
     return (
+    
       <Navigator
         initialRoute={{id: 'wifi'}}
         renderScene={this.navigatorRenderScene}/>

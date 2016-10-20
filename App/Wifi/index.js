@@ -13,7 +13,7 @@ let sdParserInstance = new parseSdResults;
 export default class App extends Component {
   constructor(props){
     super(props);
-
+    console.log("constructor app component");
     console.log(RNFS.DocumentDirectoryPath);
     
     this.state = {
@@ -76,7 +76,7 @@ export default class App extends Component {
   }
 
   render() {
-    let iconStatus = this.state.flashAirStatus !== 'Not Conected' ? require('./../imgs/wifi-icon-15-on.png') : require('./../imgs/wifi-icon-15.png');
+    let iconStatus = this.state.flashAirStatus !== 'Not Conected Jack' ? require('./../imgs/wifi-icon-15-on.png') : require('./../imgs/wifi-icon-15.png');
     // let downloadFilesBtn = <TouchableHighlight onPress={this.fetchFile.bind(this)}> 
     //   <Text style={styles.login}>Download file</Text> 
     // </TouchableHighlight>;
@@ -91,7 +91,7 @@ export default class App extends Component {
     return (
       <ScrollView contentContainerStyle={styles.bgview}>
         <View style={styles.view}>
-          <Text style={styles.title}>AEYRIUM</Text>
+         
           <View style={styles.viewrow}>
             <View style={styles.imageContainerWhite}>
               <Image

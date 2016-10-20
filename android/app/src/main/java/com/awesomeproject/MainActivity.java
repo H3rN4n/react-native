@@ -11,14 +11,14 @@ import com.pusherman.networkinfo.RNNetworkInfoPackage;
 import android.os.Bundle;
 
 // Add the imports
-import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater;
-import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater.ReactNativeAutoUpdaterUpdateType;
-import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater.ReactNativeAutoUpdaterFrequency;
-import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdaterActivity;
+// import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater;
+// import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater.ReactNativeAutoUpdaterUpdateType;
+// import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdater.ReactNativeAutoUpdaterFrequency;
+// import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdaterActivity;
 
 import com.rnfs.RNFSPackage;
 
-public class MainActivity extends ReactNativeAutoUpdaterActivity implements DefaultHardwareBackBtnHandler {
+public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
@@ -29,29 +29,29 @@ public class MainActivity extends ReactNativeAutoUpdaterActivity implements Defa
     /**
     *  URL for the metadata of the update.
     * */
-    @Override
-    protected String getUpdateMetadataUrl() {
-        return "https://www.dropbox.com/s/mp8jwks69oesyks/android-update.json?raw=1";
-    }
+    // @Override
+    // protected String getUpdateMetadataUrl() {
+    //     return "https://www.dropbox.com/s/mp8jwks69oesyks/android-update.json?raw=1";
+    // }
 
     /**
     * Name of the metadata file shipped with the app.
     * This metadata is used to compare the shipped JS code against the updates.
     * */
-    @Override
-    protected String getMetadataAssetName() {
-        return "metadata.android.json";
-    }
+    // @Override
+    // protected String getMetadataAssetName() {
+    //     return "metadata.android.json";
+    // }
 
      /**
     * 
     *  If your updates metadata JSON has a relative URL for downloading
     *  the JS bundle, set this hostname.
     * */
-    @Override
-    protected String getHostnameForRelativeDownloadURLs() {
-        return "https://www.dropbox.com";
-    }
+    // @Override
+    // protected String getHostnameForRelativeDownloadURLs() {
+    //     return "https://www.dropbox.com";
+    // }
 
     /**
     *  Decide what type of updates to download.
@@ -61,10 +61,10 @@ public class MainActivity extends ReactNativeAutoUpdaterActivity implements Defa
     *  PATCH - will download for any version change
     * default value - PATCH
     * */
-    @Override
-    protected ReactNativeAutoUpdaterUpdateType getAllowedUpdateType() {
-    return ReactNativeAutoUpdater.ReactNativeAutoUpdaterUpdateType.MINOR;
-    }
+    // @Override
+    // protected ReactNativeAutoUpdaterUpdateType getAllowedUpdateType() {
+    // return ReactNativeAutoUpdater.ReactNativeAutoUpdaterUpdateType.MINOR;
+    // }
 
     /**
     *  Decide how frequently to check for updates.
@@ -74,18 +74,18 @@ public class MainActivity extends ReactNativeAutoUpdaterActivity implements Defa
     *  WEEKLY    - maximum once per week
     * default value - EACH_TIME
     * */
-    @Override
-    protected ReactNativeAutoUpdaterFrequency getUpdateFrequency() {
-    return ReactNativeAutoUpdaterFrequency.EACH_TIME;
-    }
+    // @Override
+    // protected ReactNativeAutoUpdaterFrequency getUpdateFrequency() {
+    // return ReactNativeAutoUpdaterFrequency.EACH_TIME;
+    // }
 
     /**
     *  To show progress during the update process.
     * */
-    @Override
-    protected boolean getShowProgress() {
-    return false;
-    }
+    // @Override
+    // protected boolean getShowProgress() {
+    // return false;
+    // }
 
     //END AUTO UPDATER
 

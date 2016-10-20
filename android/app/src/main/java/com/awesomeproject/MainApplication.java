@@ -54,7 +54,7 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
-import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdaterPackage;
+//import com.aerofs.reactnativeautoupdater.ReactNativeAutoUpdaterPackage;
 import javax.annotation.Nullable;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -77,7 +77,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new ReactNativeAutoUpdaterPackage(),
+          //new ReactNativeAutoUpdaterPackage(),
           new MainReactPackage()
       );
     }

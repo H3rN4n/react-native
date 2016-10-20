@@ -45,15 +45,13 @@ export default class App extends Component {
     const dataSource = ds.cloneWithRows(this.state.files);
 
     return (
-      <View style={styles.view}>
-        <NavigationBar style={styles.navigationBar}
-          title={{ title: 'AERYUM', tintColor: '#3399db', style: styles.navigationBarTitle  }}
-          leftButton={{  title: '  < BACK', handler: () => this.goHome(),  }}
-          />
-
+      <View style={styles.view}> 
         <ScrollView contentContainerStyle={styles.bgview}>
           <View style={styles.view}>
-
+            <NavigationBar style={styles.navigationBar}
+            title={{ title: 'AERYUM', tintColor: '#3399db', style: styles.navigationBarTitle  }}
+            leftButton={{  title: '  < BACK', handler: () => this.goHome(),  }}
+            />
             <ListView
               enableEmptySections={true}
               dataSource={dataSource}

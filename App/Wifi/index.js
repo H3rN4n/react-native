@@ -7,6 +7,8 @@ import parseSdResults from './../services/sd-card-parser';
 import NetworkInfo from 'react-native-network-info';
 import RNFS from 'react-native-fs';
 
+import NavigationBar from 'react-native-navbar';
+
 const styles = getStyles();
 let sdParserInstance = new parseSdResults;
 
@@ -69,20 +71,17 @@ export default class App extends Component {
 
   goToSdFiles(){
     if(this.state.flashAirStatus != "Conected"){
-      this.props.navigator.push({id: 'messages', 'message': 'You must to connect with the Flashair Card Network'});
+      this.props.navigator.push({id: 'messages', 'message': 'You need to be connected to the Flashair Card Network'});
     } else {
       this.props.navigator.push({id: 'sdlist'});
     }
   }
 
   render() {
-    let iconStatus = this.state.flashAirStatus !== 'Not Conected Jack' ? require('./../imgs/wifi-icon-15-on.png') : require('./../imgs/wifi-icon-15.png');
+    let iconStatus = this.state.flashAirStatus !== 'Not Conected' ? require('./../imgs/wifi-icon-15-on.png') : require('./../imgs/wifi-icon-15.png');
     // let downloadFilesBtn = <TouchableHighlight onPress={this.fetchFile.bind(this)}> 
     //   <Text style={styles.login}>Download file</Text> 
     // </TouchableHighlight>;
-    let downloadFilesBtn = <TouchableHighlight onPress={this.goToSdFiles.bind(this)}> 
-      <Text style={styles.btnHome}>Download Sd Files</Text> 
-    </TouchableHighlight>;
 
     if(this.state.flashAirStatus == 'Not Conected'){
       //downloadFilesBtn = null;
@@ -90,8 +89,10 @@ export default class App extends Component {
 
     return (
       <ScrollView contentContainerStyle={styles.bgview}>
-        <View style={styles.view}>
-         
+        <View style={styles.view} >
+          <NavigationBar style={styles.navigationBar} 
+          title={{ title: 'AERYUM', tintColor: '#3399db', style: styles.navigationBarTitle }}
+          />
           <View style={styles.viewrow}>
             <View style={styles.imageContainerWhite}>
               <Image
@@ -105,11 +106,13 @@ export default class App extends Component {
           </View>
           <View style={styles.view}>
             <View style={styles.viewContainer}>
-              <TouchableHighlight onPress={this.getSSID.bind(this)}>
-                <Text style={styles.btnHome}>Refresh Wifi Connection</Text>
+              <TouchableHighlight onPress={this.getSSID.bind(this)} underlayColor={styles.transparent} style={styles.TouchableHighlight}>
+                <Text style={styles.button}>Refresh Wifi Connection</Text>
               </TouchableHighlight>
 
-              {downloadFilesBtn}
+              <TouchableHighlight onPress={this.goToSdFiles.bind(this)} underlayColor={styles.white} style={styles.TouchableHighlight}> 
+                <Text style={styles.button}>Download Sd Files</Text> 
+              </TouchableHighlight>
 
             </View>
           </View>
@@ -122,8 +125,8 @@ export default class App extends Component {
             />
           </View>
           <View style={styles.centerView}>
-            <TouchableHighlight onPress={this.goToFileList.bind(this)}>
-              <Text style={styles.login}>Upload Files</Text>
+            <TouchableHighlight onPress={this.goToFileList.bind(this)} underlayColor={styles.white} style={styles.TouchableHighlight}>
+              <Text style={styles.button}>Upload Files</Text>
             </TouchableHighlight>
           </View>
         </View>

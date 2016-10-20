@@ -55,11 +55,11 @@ export default class Tile extends Component {
     return (
       <View style={styles.viewrow}>
           <Image
-            style={styles.imageCloud}
+            style={styles.imageCloudFiles}
             source={require('./../imgs/upload-icon-3.png')}
           />
           <View style={styles.centerView}>
-            <TouchableHighlight onPress={this.uploadFile.bind(this)}>
+            <TouchableHighlight onPress={this.uploadFile.bind(this)} underlayColor={styles.white}>
               <Text style={styles.login}>Upload {data.name}</Text>
             </TouchableHighlight>
             

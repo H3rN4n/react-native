@@ -6,6 +6,8 @@ import getStyles from '../styles';
 import RNFS from 'react-native-fs';
 import parseSdResults from './../services/sd-card-parser';
 
+import NavigationBar from 'react-native-navbar';
+
 const styles = getStyles();
 let sdParserInstance = new parseSdResults;
 
@@ -42,15 +44,12 @@ export default class App extends Component {
 
     return (
       <View style={styles.view}>
-        <View>
-          <Text style={styles.title}>AEYRIUM</Text>
-        </View>
+        <NavigationBar style={styles.navigationBar}
+          title={{ title: 'AERYUM', tintColor: '#3399db', style: styles.navigationBarTitle  }}
+          leftButton={{ title: '  < BACK', handler: () => this.goHome(), }}
+          />
         <ScrollView contentContainerStyle={styles.bgview}>
           <View style={styles.view}>
-            
-            <TouchableHighlight onPress={this.goHome.bind(this)}>
-              <Text style={styles.login}>Back</Text>
-            </TouchableHighlight>
 
             <ListView
               enableEmptySections={true}

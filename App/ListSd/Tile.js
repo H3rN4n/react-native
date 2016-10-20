@@ -43,11 +43,11 @@ export default class Tile extends Component {
       
       <View style={styles.viewrow}>
           <Image
-            style={styles.imageCloud}
+            style={styles.imageCloudFiles}
             source={require('./../imgs/upload-icon-3.png')}
           />
           <View style={styles.centerView}>
-            <TouchableHighlight onPress={this.fetchFile.bind(this)}>
+            <TouchableHighlight onPress={this.fetchFile.bind(this)} underlayColor={styles.white}>
               <Text style={styles.login}>Download {data.name.filename}</Text>
             </TouchableHighlight>
 

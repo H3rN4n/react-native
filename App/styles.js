@@ -11,7 +11,12 @@ export default function getStyles(){
       padding: 0,
       margin: 0
     },
-
+    white:{
+      backgroundColor: 'white',
+    },
+    transparent:{
+      backgroundColor: 'transparent',
+    },
     view: {
       flex: 1,
       alignItems: 'stretch',
@@ -72,31 +77,51 @@ export default function getStyles(){
     statusText: {
       textAlign: 'center',
       marginTop: 20,
-      fontSize: 18
+      fontSize: 20
+    },
+    TouchableHighlight:{
+      borderRadius: 10,
+      backgroundColor: primary,
+      padding: 15,
+      paddingTop: 20,
+      paddingBottom: 20,
+      marginTop: 15,
+      
+    },
+    button: {
+      color: '#FFF',
+      fontSize: 22,
+      textAlign: 'center',
+    },
+    message: {
+      backgroundColor: '#FFF',
+      color: primary,
+      padding: 26,
+      textAlign: 'center',
+      marginTop: 8,
+      fontSize: 24,
     },
     login: {
       backgroundColor: primary,
       color: '#FFF',
       padding: 15,
       textAlign: 'center',
-      marginTop: 15
-    },
-    btnHome: {
-      backgroundColor: primary,
-      color: '#FFF',
-      padding: 15,
-      paddingTop: 30,
-      paddingBottom: 30,
-      textAlign: 'center',
-      marginTop: 15
-    },
-    message: {
-      backgroundColor: 'white',
-      color: primary,
-      padding: 15,
-      textAlign: 'center',
       marginTop: 15,
-      fontSize: 24
+      fontSize: 16,
+    },
+    navigationBar:{
+      flex: 1, 
+      backgroundColor: '#fff', 
+      height: 70,
+    },
+    navigationBarTitle:{
+      fontSize: 24,
+      fontWeight: 'bold',
+    },
+    navigationBarLeft:{
+      fontSize: 30,
+      fontWeight: 'bold',
+      marginLeft: 10,
     },
     loading: {
       opacity: 0.5
@@ -110,19 +135,31 @@ export default function getStyles(){
     },
     imageContainerWhite: {
       alignItems: 'stretch',
-      paddingTop: 20,
+      backgroundColor: 'white',
+      marginTop:8,
+      paddingLeft:10,
+      paddingBottom:10,
     },
     imageWifi: {
       width: 60,
       height: 54,
       padding: 0,
       margin: 0,
-      backgroundColor: 'white',
+      marginTop:20,
+      
     },
     imageCloud: {
       width: 77,
       height: 50,
       padding: 0,
+      margin: 0,
+      marginTop: 10,
+    },
+    imageCloudFiles: {
+      width: 77,
+      height: 50,
+      padding: 0,
+      marginTop:20,
       margin: 0,
     }
   });

@@ -11,6 +11,14 @@ export default function getStyles(){
       backgroundColor: primary, //'#F4F4F4',
       padding: 15
     },
+    viewWhite:{
+      flex: 1,
+      alignItems: 'stretch',
+      backgroundColor: 'white',
+      padding: 10,
+      margin: 0,
+      justifyContent:'center'
+    },
     bgview: {
       flex: 1,
       alignItems: 'stretch',
@@ -107,6 +115,14 @@ export default function getStyles(){
       textAlign: 'center',
       marginTop: 8,
       fontSize: 24,
+    },
+    messageHome: {
+      backgroundColor: '#FFF',
+      color: primary,
+      padding: 10,
+      textAlign: 'left',
+      marginTop: 8,
+      fontSize: 16,
     },
     login: {
       backgroundColor: primary,

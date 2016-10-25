@@ -4,9 +4,12 @@ import getStyles from '../styles';
 import { fetchFiles, fetchFile, getSSID, uploadFile, checkInternetConnection } from '../services/AsyncService';
 import parseSdResults from './../services/sd-card-parser';
 import NavigationBar from 'react-native-navbar';
+import getImages from '.././images';
+const images = getImages();
 
 import NetworkInfo from 'react-native-network-info';
 import RNFS from 'react-native-fs';
+
 
 const styles = getStyles();
 let sdParserInstance = new parseSdResults;
@@ -76,7 +79,6 @@ export default class App extends Component {
   }
 
   render() {
-    let iconStatus = this.state.flashAirStatus !== 'Not Conected' ? require('./../imgs/wifi-icon-15-on.png') : require('./../imgs/wifi-icon-15.png');
     // let downloadFilesBtn = <TouchableHighlight onPress={this.fetchFile.bind(this)}> 
     //   <Text style={styles.login}>Download file</Text> 
     // </TouchableHighlight>;
@@ -102,12 +104,26 @@ export default class App extends Component {
           </View>
           <View style={styles.viewrow}>
             <View style={styles.view}>
-              <Text style={styles.message}>Flashair: {this.state.flashAirStatus}</Text>
+              <View style={styles.viewWhite}>
+                <Image
+                  style={{width: 50, height: 50}}
+                  source={{uri: images.sdCardImg}}
+                /> 
+                <Text style={styles.messageHome}>SD:</Text>
+              </View>
+              <Text style={styles.messageHome}>
+              {this.state.flashAirStatus} </Text>
             </View>
-          </View>
-          <View style={styles.viewrow}>
             <View style={styles.view}>
-              <Text style={styles.message}>Internet: {this.state.internetConnection}</Text>
+            <View style={styles.viewWhite}>
+                <Image
+                  style={{width: 50, height: 50}}
+                  source={{uri: images.internetImg}}
+                /> 
+                <Text style={styles.messageHome}>Internet:</Text>
+              </View>
+              <Text style={styles.messageHome}>
+              {this.state.internetConnection} </Text>
             </View>
           </View>
   

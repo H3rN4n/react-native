@@ -4,6 +4,9 @@ import { uploadFile } from '../services/AsyncService';
 import getStyles from '../styles';
 import RNFS from 'react-native-fs';
 
+import getImages from '.././images';
+const images = getImages();
+
 const styles = getStyles();
 
 export default class Tile extends Component {
@@ -54,10 +57,6 @@ export default class Tile extends Component {
 
     return (
       <View style={styles.viewrow}>
-          <Image
-            style={styles.imageCloud}
-            source={require('./../imgs/upload-icon-3.png')}
-          />
           <View style={styles.centerView}>
             <TouchableHighlight onPress={this.uploadFile.bind(this)}>
               <Text style={styles.login}>Upload {data.name}</Text>

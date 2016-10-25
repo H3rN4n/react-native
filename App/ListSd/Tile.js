@@ -6,6 +6,9 @@ import RNFS from 'react-native-fs';
 
 const styles = getStyles();
 
+import getImages from '.././images';
+const images = getImages();
+
 export default class Tile extends Component {
   constructor(props){
     super(props);
@@ -40,12 +43,10 @@ export default class Tile extends Component {
     console.log(data);
 
     return (
+
+      
       
       <View style={styles.viewrow}>
-          <Image
-            style={styles.imageCloud}
-            source={require('./../imgs/upload-icon-3.png')}
-          />
           <View style={styles.centerView}>
             <TouchableHighlight onPress={this.fetchFile.bind(this)}>
               <Text style={styles.login}>Download {data.name.filename}</Text>
